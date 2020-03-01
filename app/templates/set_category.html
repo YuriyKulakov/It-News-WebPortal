@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tags</title>
+    <style>
+        table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    td {
+        padding-right: 30px;
+        padding: 5px;
+    }
+
+    tr:hover td{
+        background-color: #ffff99;
+    }
+    </style>
+</head>
+
+<body>
+<div>
+    <form method="post" action="">
+        <table>
+         <tr>
+             <th>
+                 Tag
+             </th>
+             <th>Category</th>
+         </tr>
+        {% for row in tags: %}
+            <tr>
+              <td>{{ row[0] }}</td>
+              <td><select name="{{row[0]}}">
+                       {% for category in categories: %}
+                            {% if row[1] == category %}
+                            <option selected="selected">{{category}}</option>
+                            {%else%}
+                            <option>{{category}}</option>
+                            {% endif %}
+                       {%endfor%}
+                  </select>
+              </td>
+            </tr>
+            {%endfor%}
+        </table>
+        <br>
+        <input type="submit"/>
+    </form>
+</div>
+</body>
+</html>

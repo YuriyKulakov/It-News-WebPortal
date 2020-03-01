@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block left_content %}
+    {% set technology_news = get_technology_news_top() %}
+    {% set mobile_news = get_mobile_news_top() %}
+    {% set development_news = get_development_news_top() %}
+    {% set os_news = get_os_news_top() %}
+    {% set security_news = get_security_news_top() %}
+    <div class="single_post_content">
+        <h2><span>Technology</span></h2>
+        <div class="single_post_content_left">
+            <ul class="business_catgnav  wow fadeInDown">
+                <li>
+                    <figure class="bsbig_fig"><a href="pages/single_page.html" class="featured_img">
+                        <img alt="" src="{{ technology_news[0][2] }}"> <span class="overlay"></span> </a>
+                        <figcaption><a href="pages/single_page.html">{{ technology_news[0][1].decode('utf-8') }}</a></figcaption>
+                        <p>{{ technology_news[0][3].decode('utf-8') }}</p>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+        <div class="single_post_content_right">
+            <ul class="spost_nav">
+                {% for id, title, image, teaser in technology_news[1:] %}
+                <li>
+                    <div class="media wow fadeInDown"><a href="pages/single_page.html"
+                                                         class="media-left"> <img alt=""
+                                                                                  src="{{ image }}">
+                    </a>
+                        <div class="media-body"><a href="pages/single_page.html" class="catg_title">
+                            {{ title.decode('utf-8') }}</a></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="fashion_technology_area">
+        <div class="fashion">
+            <div class="single_post_content">
+                <h2><span>Mobile</span></h2>
+                <ul class="business_catgnav wow fadeInDown">
+                    <li>
+                        <figure class="bsbig_fig"><a href="pages/single_page.html" class="featured_img">
+                            <img alt="" src="{{ mobile_news[0][2] }}"> <span class="overlay"></span>
+                        </a>
+                            <figcaption><a href="pages/single_page.html">{{ mobile_news[0][1].decode('utf-8') }}</a></figcaption>
+                            <p>{{ mobile_news[0][3].decode('utf-8') }}.</p>
+                        </figure>
+                    </li>
+                </ul>
+                <ul class="spost_nav">
+                    {% for id, title, image, teaser in mobile_news[1:] %}
+                    <li>
+                        <div class="media wow fadeInDown"><a href="pages/single_page.html"
+                                                             class="media-left"> <img alt=""
+                                                                                      src="{{ image }}">
+                        </a>
+                            <div class="media-body"><a href="pages/single_page.html" class="catg_title">
+                                {{ title.decode('utf-8') }}</a></div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="technology">
+            <div class="single_post_content">
+                <h2><span>Development</span></h2>
+                <ul class="business_catgnav">
+                    <li>
+                        <figure class="bsbig_fig wow fadeInDown"><a href="pages/single_page.html"
+                                                                    class="featured_img"> <img alt=""
+                                                                                               src="{{ development_news[0][2] }}">
+                            <span class="overlay"></span> </a>
+                            <figcaption><a href="pages/single_page.html">{{ development_news[0][1].decode('utf-8') }}</a></figcaption>
+                            <p>{{ development_news[0][3].decode('utf-8') }}</p>
+                        </figure>
+                    </li>
+                </ul>
+                <ul class="spost_nav">
+                     {% for id, title, image, teaser in development_news[1:] %}
+                    <li>
+                        <div class="media wow fadeInDown"><a href="pages/single_page.html"
+                                                             class="media-left"> <img alt=""
+                                                                                      src="{{ image }}">
+                        </a>
+                            <div class="media-body"><a href="pages/single_page.html" class="catg_title">
+                                {{ title.decode('utf-8') }}</a></div>
+                        </div>
+                    </li>
+                     {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="single_post_content">
+        <h2><span>OS</span></h2>
+        <div class="single_post_content_left">
+            <ul class="business_catgnav">
+                <li>
+                    <figure class="bsbig_fig  wow fadeInDown"><a class="featured_img"
+                                                                 href="pages/single_page.html"> <img
+                            src="{{ os_news[0][2] }}" alt=""> <span class="overlay"></span> </a>
+                        <figcaption><a href="pages/single_page.html">{{ os_news[0][1].decode('utf-8') }}</a></figcaption>
+                        <p>{{ os_news[0][3].decode('utf-8') }}</p>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+        <div class="single_post_content_right">
+            <ul class="spost_nav">
+                {% for id, title, image, teaser in os_news[1:] %}
+                <li>
+                    <div class="media wow fadeInDown"><a href="pages/single_page.html"
+                                                         class="media-left"> <img alt=""
+                                                                                  src="{{ image }}">
+                    </a>
+                        <div class="media-body"><a href="pages/single_page.html" class="catg_title">
+                            {{ title.decode('utf-8') }}</a></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="single_post_content">
+        <h2><span>Security</span></h2>
+        <div class="single_post_content_left">
+            <ul class="business_catgnav">
+                <li>
+                    <figure class="bsbig_fig  wow fadeInDown"><a class="featured_img"
+                                                                 href="pages/single_page.html"> <img
+                            src="{{ security_news[0][2] }}" alt=""> <span class="overlay"></span> </a>
+                        <figcaption><a href="pages/single_page.html">{{ security_news[0][1].decode('utf-8') }}</a></figcaption>
+                        <p>{{ security_news[0][3].decode('utf-8') }}</p>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+        <div class="single_post_content_right">
+            <ul class="spost_nav">
+                {% for id, title, image, teaser in security_news[1:] %}
+                <li>
+                    <div class="media wow fadeInDown"><a href="pages/single_page.html"
+                                                         class="media-left"> <img alt=""
+                                                                                  src="{{ image }}">
+                    </a>
+                        <div class="media-body"><a href="pages/single_page.html" class="catg_title">
+                            {{ title.decode('utf-8') }}</a></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %} 
